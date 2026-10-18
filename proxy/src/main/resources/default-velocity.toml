@@ -452,7 +452,7 @@ enabled = false
 port = 25565
 
 # This is the map name reported to the query services.
-map = "Velocity-CTD"
+map = "Flume"
 
 # Whether plugins should be shown in query response by default or not.
 show-plugins = false
@@ -607,14 +607,14 @@ minigames = 300
 #                       is not a placeholder. Enter a valid server in the scope.
 
 [server-links.GitHub]
-link = "https://github.com/GemstoneGG/Velocity-CTD"
+link = "https://github.com/cobrayigamer/Flume"
 label = "<#ff3a4c>GitHub"
 server = [
     "all"
 ]
 
 [server-links.Discord]
-link = "https://discord.gg/beer"
+link = "https://discord.gg/example"
 label = "<#09add3>Discord"
 server = [
     "factions",
