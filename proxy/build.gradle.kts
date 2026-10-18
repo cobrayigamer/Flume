@@ -53,7 +53,7 @@ val generatePermissionIntegrationsIndex by tasks.registering {
 tasks {
     jar {
         manifest {
-            attributes["Implementation-Title"] = "Velocity-CTD"
+            attributes["Implementation-Title"] = "Flume"
             attributes["Implementation-Vendor"] = "Velocity(-CTD) Contributors"
             attributes["Multi-Release"] = "true"
             attributes["Enable-Native-Access"] = "ALL-UNNAMED"

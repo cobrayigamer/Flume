@@ -110,7 +110,7 @@ public class GameSpyQueryHandler extends SimpleChannelInboundHandler<DatagramPac
         .proxyPort(server.getConfiguration().getBind().getPort())
         .proxyHost(server.getConfiguration().getBind().getHostString())
         .players(server.getOnlinePlayers().stream().map(ConnectedPlayer::getUsername).collect(Collectors.toList()))
-        .proxyVersion("Velocity-CTD")
+        .proxyVersion("Flume")
         .plugins(server.getConfiguration().shouldQueryShowPlugins() ? getRealPluginInformation() : Collections.emptyList())
         .build();
   }
