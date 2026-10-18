@@ -90,6 +90,7 @@ server-icon.png
 run/
 plugins/
 lang/
+AGENTS.md
 
 ### Natives stuff ###
 native/mbedtls

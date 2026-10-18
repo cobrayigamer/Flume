@@ -149,8 +149,7 @@ import org.jetbrains.annotations.UnmodifiableView;
 @SuppressWarnings({"unchecked"})
 public class VelocityServer implements ProxyServer, ForwardingAudience {
 
-  public static final String VELOCITY_URL = "https://github.com/GemstoneGG/Velocity-CTD";
-  public static final String DISCORD_URL = "https://discord.gg/beer";
+  public static final String VELOCITY_URL = "https://github.com/cobrayigamer/Flume";
 
   private static final Logger LOGGER = LogManager.getLogger(VelocityServer.class);
 
@@ -319,7 +318,7 @@ public class VelocityServer implements ProxyServer, ForwardingAudience {
     Package pkg = VelocityServer.class.getPackage();
     String implName = Optional.ofNullable(pkg)
         .map(Package::getImplementationTitle)
-        .orElse("Velocity-CTD");
+        .orElse("Flume");
     String implVersion = Optional.ofNullable(pkg)
         .map(Package::getImplementationVersion)
         .orElse("<unknown>");
@@ -333,8 +332,9 @@ public class VelocityServer implements ProxyServer, ForwardingAudience {
   private VelocityPluginContainer createVirtualPlugin() {
     ProxyVersion version = getVersion();
     PluginDescription description = new VelocityPluginDescription(
-        "velocityctd", version.getName(), version.getVersion(), "The Velocity-CTD proxy",
-            (version.getName().equals("Velocity") || version.getName().equals("Velocity-CTD")) ? VELOCITY_URL : null,
+        "velocityctd", version.getName(), version.getVersion(), "The Flume proxy",
+            (version.getName().equals("Velocity") || version.getName().equals("Velocity-CTD")
+                || version.getName().equals("Flume")) ? VELOCITY_URL : null,
             ImmutableList.of(version.getVendor()), Collections.emptyList(),
             Collections.emptyList(), null);
     VelocityPluginContainer container = new VelocityPluginContainer(description);
