@@ -98,6 +98,7 @@ import com.velocitypowered.proxy.util.AddressUtil;
 import com.velocitypowered.proxy.util.VelocityChannelRegistrar;
 import com.velocitypowered.proxy.util.ratelimit.Ratelimiter;
 import com.velocitypowered.proxy.util.ratelimit.Ratelimiters;
+import dev.flumemc.proxy.command.HostcheckCommand;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
@@ -688,6 +689,7 @@ public class VelocityServer implements ProxyServer, ForwardingAudience {
     registerCommand(VelocityCommand::new);
     registerCommand(CallbackCommand::new);
     registerCommand(ShutdownCommand::new);
+    registerCommand(HostcheckCommand::new);
     registerCommand(configuration.isAlertEnabled(), AlertCommand::new);
     registerCommand(configuration.isAlertRawEnabled(), AlertRawCommand::new);
     registerCommand(configuration.isFindEnabled(), FindCommand::new);
