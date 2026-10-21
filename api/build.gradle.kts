@@ -56,14 +56,14 @@ tasks {
     withType<Javadoc> {
         val o = options as StandardJavadocDocletOptions
         o.encoding = "UTF-8"
-        o.source = "25"
+        o.source = "21"
 
         o.use()
         o.links(
             "https://www.javadocs.dev/org.slf4j/slf4j-api/${libs.slf4j.get().version}/",
             "https://guava.dev/releases/${libs.guava.get().version}/api/docs/",
             "https://google.github.io/guice/api-docs/${libs.guice.get().version}/javadoc/",
-            "https://docs.oracle.com/en/java/javase/25/docs/api/",
+            "https://docs.oracle.com/en/java/javase/21/docs/api/",
             "https://jd.papermc.io/adventure/${libs.adventure.bom.get().version}/",
             "https://www.javadocs.dev/com.github.ben-manes.caffeine/caffeine/${libs.caffeine.get().version}/",
         )

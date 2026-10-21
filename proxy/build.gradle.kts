@@ -52,6 +52,7 @@ val generatePermissionIntegrationsIndex by tasks.registering {
 
 tasks {
     jar {
+        archiveBaseName.set("Flume")
         manifest {
             attributes["Implementation-Title"] = "Flume"
             attributes["Implementation-Vendor"] = "Velocity(-CTD) Contributors"
@@ -76,6 +77,7 @@ tasks {
     }
 
     shadowJar {
+        archiveBaseName.set("Flume")
         filesMatching("META-INF/org/apache/logging/log4j/core/config/plugins/**") {
             duplicatesStrategy = DuplicatesStrategy.INCLUDE
         }
@@ -84,6 +86,33 @@ tasks {
 
         // Exclude Checker Framework annotations
         exclude("org/checkerframework/checker/**")
+
+        // Exclude unused fastutil primitive type variations (reduces jar size)
+        exclude("it/unimi/dsi/fastutil/booleans/**")
+        exclude("it/unimi/dsi/fastutil/bytes/**")
+        exclude("it/unimi/dsi/fastutil/chars/**")
+        exclude("it/unimi/dsi/fastutil/doubles/**")
+        exclude("it/unimi/dsi/fastutil/floats/**")
+        exclude("it/unimi/dsi/fastutil/longs/**")
+        exclude("it/unimi/dsi/fastutil/shorts/**")
+        exclude("it/unimi/dsi/fastutil/ints/*Int2Boolean*")
+        exclude("it/unimi/dsi/fastutil/ints/*Int2Byte*")
+        exclude("it/unimi/dsi/fastutil/ints/*Int2Char*")
+        exclude("it/unimi/dsi/fastutil/ints/*Int2Double*")
+        exclude("it/unimi/dsi/fastutil/ints/*Int2Float*")
+        exclude("it/unimi/dsi/fastutil/ints/*Int2Long*")
+        exclude("it/unimi/dsi/fastutil/ints/*Int2Short*")
+        exclude("it/unimi/dsi/fastutil/ints/*Int2Reference*")
+        exclude("it/unimi/dsi/fastutil/ints/*Int2Int*")
+        exclude("it/unimi/dsi/fastutil/objects/*Object2Boolean*")
+        exclude("it/unimi/dsi/fastutil/objects/*Object2Byte*")
+        exclude("it/unimi/dsi/fastutil/objects/*Object2Char*")
+        exclude("it/unimi/dsi/fastutil/objects/*Object2Double*")
+        exclude("it/unimi/dsi/fastutil/objects/*Object2Float*")
+        exclude("it/unimi/dsi/fastutil/objects/*Object2Long*")
+        exclude("it/unimi/dsi/fastutil/objects/*Object2Short*")
+        exclude("it/unimi/dsi/fastutil/objects/*Object2Reference*")
+        exclude("it/unimi/dsi/fastutil/objects/*Reference2*")
 
         relocations.forEach { (from, to) -> relocate(from, to) }
 
