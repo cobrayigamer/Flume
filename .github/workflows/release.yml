@@ -67,8 +67,8 @@ jobs:
 
       - name: Prepare Release Jars
         run: |
-          FAT_JAR=$(ls proxy/build/libs/velocity-proxy-*-all.jar)
-          FAT_VERSION=$(echo "$FAT_JAR" | sed 's|proxy/build/libs/velocity-proxy-||' | sed 's|-all\.jar||')
+          FAT_JAR=$(ls proxy/build/libs/Flume-*-all.jar)
+          FAT_VERSION=$(echo "$FAT_JAR" | sed 's|proxy/build/libs/Flume-||' | sed 's|-all\.jar||')
           cp "$FAT_JAR" "proxy/build/libs/flume-fatjar-$FAT_VERSION-${{ steps.release_tag.outputs.build_nr }}.jar"
 
           BOOT_JAR=$(ls bootstrap/build/libs/velocity-bootstrap-*.jar | grep -v -- '-sources\.jar')
